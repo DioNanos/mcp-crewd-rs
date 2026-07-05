@@ -1,0 +1,12 @@
+/target
+Cargo.lock.bak*
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env
+*.token
+/test-report/tmp/
+
+# Node (shim/claude-shim.mjs) — nessun install previsto in repo, ma previene incidenti
+node_modules/
+shim/package-lock.json

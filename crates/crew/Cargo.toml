@@ -1,0 +1,21 @@
+[package]
+name = "crew"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+
+[dependencies]
+crewd-core = { path = "../crewd-core" }
+tokio = { workspace = true, features = ["io-std"] }
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+assert_cmd = "2"
+crewd = { path = "../crewd" }
