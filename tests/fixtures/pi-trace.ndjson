@@ -1,0 +1,11 @@
+{"_comment":"Real pi --mode rpc trace (LF-only JSONL). pi->client lines only; the replay emits them per client command up to the terminal agent_end."}
+{"_comment":"--- one prompt turn: accepted -> streamed text -> final ---"}
+{"type":"response","command":"prompt","id":"req_1","success":true}
+{"type":"agent_start"}
+{"type":"turn_start"}
+{"type":"message_update","message":{"role":"assistant"},"assistantMessageEvent":{"type":"text_start","contentIndex":0,"partial":{"role":"assistant"}}}
+{"type":"message_update","message":{"role":"assistant"},"assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":"file_a.txt\n","partial":{"role":"assistant"}}}
+{"type":"message_update","message":{"role":"assistant"},"assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":"file_b.rs\nREADME.md","partial":{"role":"assistant"}}}
+{"type":"message_end","message":{"role":"assistant","content":[{"type":"text","text":"file_a.txt\nfile_b.rs\nREADME.md"}],"stopReason":"stop"}}
+{"type":"turn_end","message":{"role":"assistant","content":[{"type":"text","text":"file_a.txt\nfile_b.rs\nREADME.md"}],"stopReason":"stop"}}
+{"type":"agent_end","willRetry":false,"messages":[{"role":"user","content":"elenca i file"},{"role":"assistant","content":[{"type":"text","text":"file_a.txt\nfile_b.rs\nREADME.md"}],"stopReason":"stop"}]}

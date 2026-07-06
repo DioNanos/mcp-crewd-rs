@@ -1,0 +1,29 @@
+[package]
+name = "crewd"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+
+[dependencies]
+crewd-core = { path = "../crewd-core" }
+tokio.workspace = true
+rustix = { workspace = true, features = ["process"] }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+clap.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+rand.workspace = true
+sha2.workspace = true
+
+# macOS has no SO_PEERCRED; peer identity comes from getpeereid(2) +
+# LOCAL_PEERPID, which rustix does not expose — raw libc only on that target.
+[target.'cfg(target_os = "macos")'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+tempfile.workspace = true
