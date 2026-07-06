@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.DioNanos/mcp-crewd-rs",
+  "title": "mcp-crewd-rs",
+  "description": "Cell fabric daemon: spawn and coordinate Claude/Codex/pi worker cells over MCP. Audited.",
+  "version": "0.1.4",
+  "repository": {
+    "url": "https://github.com/DioNanos/mcp-crewd-rs",
+    "source": "github"
+  },
+  "websiteUrl": "https://dev.mmmbuto.com"
+}
