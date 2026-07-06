@@ -1,0 +1,17 @@
+{"_comment":"synthetic pi rpc trace v0"}
+{"_comment":"pi engine adapter (crewd Phase 2 Task 13) — trace replay fixture."}
+{"_comment":"Formato: NDJSON, una riga JSON valida per riga. dir=req e' crewd->pi, dir=res e' pi->crewd. Le righe _comment sono ignorate dal replay."}
+{"_comment":"--- sessione 1: una richiesta prompt + eventi fino al final ---"}
+{"dir":"req","id":1,"method":"run","params":{"prompt":"elenca i file nella cwd","mode":"background","cwd":"/tmp/cell-pi-1"}}
+{"dir":"res","id":1,"result":{"status":"accepted","engine_turn_id":"t-1"}}
+{"dir":"res","id":1,"result":{"status":"progress","note":"lettura directory in corso"}}
+{"dir":"res","id":1,"result":{"status":"final","final_answer":"file_a.txt\nfile_b.rs\nREADME.md","session_id":null}}
+{"_comment":"--- resume: pi v0 non supporta session resume (onesto, SPEC §20.6) ---"}
+{"dir":"req","id":2,"method":"resume","params":{"session_id":"<sid>"}}
+{"dir":"res","id":2,"error":{"code":"E_THREAD_NOT_RESUMABLE","message":"pi v0: no session resume"}}
+{"_comment":"--- abort: termina il turno in corso (caps supports_abort=true) ---"}
+{"dir":"req","id":3,"method":"run","params":{"prompt":"lavoro lungo","mode":"background"}}
+{"dir":"res","id":3,"result":{"status":"accepted","engine_turn_id":"t-2"}}
+{"dir":"req","id":4,"method":"abort","params":{"engine_turn_id":"t-2"}}
+{"dir":"res","id":4,"result":{"status":"aborted","engine_turn_id":"t-2"}}
+{"_comment":"fine trace"}

@@ -1,0 +1,11 @@
+/target
+Cargo.lock.bak*
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env
+*.token
+
+# Node (shim/claude-shim.mjs) — SDK is installed by the user, not vendored
+node_modules/
+shim/package-lock.json
